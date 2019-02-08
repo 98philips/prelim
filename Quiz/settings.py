@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a8^%hi3_4ww$3)x42wca8m1wg2#uw6u7dvu*co=5@74x%nb&3#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0',]
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0','sreeraj.pythonanywhere.com']
 
 
 # Application definition
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'prilims',
+
     'django_user_agents',
+
 ]
 
 MIDDLEWARE = [
@@ -49,7 +51,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_user_agents.middleware.UserAgentMiddleware',
+
+        'django_user_agents.middleware.UserAgentMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'Quiz.urls'
@@ -124,7 +129,9 @@ USE_TZ = True
 LOGIN_URL = '/login'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static'
-STATICFILES_DIRS = (os.path.join(BASE_DIR , 'static') ,)
+STATIC_ROOT =  os.path.join(BASE_DIR , 'static')
+#STATICFILES_DIRS = (os.path.join(BASE_DIR , 'static') ,)
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
